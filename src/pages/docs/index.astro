@@ -1,19 +1,21 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+const basePath = import.meta.env.BASE_URL;
+const withBase = (path = '') => `${basePath.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 
 const entries = [
   {
-    href: `${Astro.base}docs/getting-started/`,
+    href: withBase('docs/getting-started/'),
     title: 'Getting Started',
     description: 'Install or verify the YApi CLI, reuse your login state, and confirm the plugin is ready.',
   },
   {
-    href: `${Astro.base}docs/commands/`,
+    href: withBase('docs/commands/'),
     title: 'Commands',
     description: 'See the first release command set for setup, login, interface lookup, and docs-sync.',
   },
   {
-    href: `${Astro.base}docs/development/`,
+    href: withBase('docs/development/'),
     title: 'Development',
     description: 'Run tests, validate the plugin manifest, and understand the local wrapper scripts.',
   },

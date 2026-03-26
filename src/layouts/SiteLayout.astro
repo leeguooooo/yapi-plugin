@@ -7,6 +7,8 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const basePath = import.meta.env.BASE_URL;
+const withBase = (path = '') => `${basePath.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
 <!doctype html>
@@ -20,7 +22,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <link rel="icon" href={`${Astro.base}logo.svg`} />
+    <link rel="icon" href={withBase('logo.svg')} />
     <link rel="canonical" href={canonical} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,13 +36,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <div class="page-glow page-glow-one"></div>
       <div class="page-glow page-glow-two"></div>
       <header class="site-header">
-        <a class="brand" href={`${Astro.base}`}>
-          <img src={`${Astro.base}logo.svg`} alt="YApi Plugin logo" />
+        <a class="brand" href={withBase()}>
+          <img src={withBase('logo.svg')} alt="YApi Plugin logo" />
           <span>YApi Plugin</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a href={`${Astro.base}`}>Home</a>
-          <a href={`${Astro.base}docs/`}>Docs</a>
+          <a href={withBase()}>Home</a>
+          <a href={withBase('docs/')}>Docs</a>
           <a href="https://github.com/leeguooooo/yapi-plugin">GitHub</a>
         </nav>
       </header>
@@ -53,8 +55,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           <p>Cursor workflows for YApi setup, interface lookup, and docs-sync.</p>
         </div>
         <div class="footer-links">
-          <a href={`${Astro.base}docs/getting-started/`}>Getting Started</a>
-          <a href={`${Astro.base}docs/commands/`}>Commands</a>
+          <a href={withBase('docs/getting-started/')}>Getting Started</a>
+          <a href={withBase('docs/commands/')}>Commands</a>
           <a href="https://github.com/leeguooooo/yapi-plugin">Repository</a>
         </div>
       </footer>
