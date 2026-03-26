@@ -1,34 +1,31 @@
-# Cursor plugin template
+# yapi-plugin
 
-Build and publish Cursor Marketplace plugins from a single repo.
+Cursor plugin for working with YApi through the existing `yapi` CLI.
 
-Two starter plugins are included:
+## What it does
 
-- **starter-simple**: rules and skills only
-- **starter-advanced**: rules, skills, agents, commands, hooks, MCP, and scripts
+- Detect and install `@leeguoo/yapi-mcp` automatically when `yapi` is missing
+- Reuse `~/.yapi/config.toml` and existing `yapi login` state
+- Query interfaces by keyword or ID
+- List interfaces under a category
+- Run `docs-sync` commands from Cursor
 
-## Getting started
+## Layout
 
-[Use this template](https://github.com/cursor/plugin-template/generate) to create a new repository, then customize:
+- `.cursor-plugin/plugin.json`: marketplace metadata
+- `skills/yapi/SKILL.md`: YApi routing and URL handling guidance
+- `commands/`: setup, login, query, and docs-sync command prompts
+- `scripts/`: local Node wrappers around the `yapi` CLI
 
-1. `.cursor-plugin/marketplace.json`: set marketplace `name`, `owner`, and `metadata`.
-2. `plugins/*/.cursor-plugin/plugin.json`: set `name` (lowercase kebab-case), `displayName`, `author`, `description`, `keywords`, `license`, and `version`.
-3. Replace placeholder rules, skills, agents, commands, hooks, scripts, and logos.
+## Local development
 
-To add more plugins, see `docs/add-a-plugin.md`.
+```bash
+npm test
+npm run validate
+```
 
-## Single plugin vs multi-plugin
+## Runtime assumptions
 
-This template defaults to **multi-plugin** (multiple plugins in one repo).
-
-For a **single plugin**, move your plugin folder contents to the repository root, keep one `.cursor-plugin/plugin.json`, and remove `.cursor-plugin/marketplace.json`.
-
-## Submission checklist
-
-- Each plugin has a valid `.cursor-plugin/plugin.json`.
-- Plugin names are unique, lowercase, and kebab-case.
-- `.cursor-plugin/marketplace.json` entries map to real plugin folders.
-- All frontmatter metadata is present in rule, skill, agent, and command files.
-- Logos are committed and referenced with relative paths.
-- `node scripts/validate-template.mjs` passes.
-- Repository link is ready for submission to the Cursor team (Slack or `kniparko@anysphere.com`).
+- `node` and `npm` are available locally
+- global npm install is permitted
+- YApi authentication is still managed by `yapi login`

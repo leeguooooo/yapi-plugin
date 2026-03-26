@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">YApi Plugin Logo</title>
+  <desc id="desc">Dark rounded square with a stylized Y and an API badge.</desc>
+  <rect width="128" height="128" rx="24" fill="#0f172a" />
+  <path d="M34 30h18l12 20 12-20h18L72 66v32H56V66L34 30z" fill="#38bdf8" />
+  <rect x="74" y="74" width="30" height="20" rx="10" fill="#22c55e" />
+  <text x="89" y="88" text-anchor="middle" font-size="10" font-family="Arial, sans-serif" fill="#052e16">API</text>
+</svg>
