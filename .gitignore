@@ -5,6 +5,8 @@
 
 # Dependencies
 node_modules/
+.astro/
+dist/
 
 # OS and editor
 .DS_Store

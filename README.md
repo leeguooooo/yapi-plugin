@@ -31,6 +31,8 @@ It wraps the existing `yapi` CLI so you can use YApi without leaving the editor.
 ```bash
 npm test
 npm run validate
+npm run dev
+npm run build
 ```
 
 ## Runtime assumptions
@@ -38,6 +40,17 @@ npm run validate
 - `node` and `npm` are available locally
 - global npm install is permitted
 - YApi authentication is still managed by `yapi login`
+
+## GitHub Pages
+
+The repository now includes a lightweight Astro site for GitHub Pages:
+
+- homepage: product overview and installation entry point
+- docs area: setup, commands, and development notes
+
+Once the Pages workflow is merged to `main`, the site will publish at:
+
+- `https://leeguooooo.github.io/yapi-plugin/`
 
 ## Marketplace copy
 
