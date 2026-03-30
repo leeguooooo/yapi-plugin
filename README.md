@@ -42,6 +42,14 @@ npm run build
 - global npm install is permitted
 - YApi authentication is still managed by `yapi login`
 
+## Marketplace sync
+
+This repository is the source of truth for `yapi-plugin`.
+
+To enable automatic sync into `port-wind/marketplace` after each push to `main`, configure:
+
+- `PORT_WIND_MARKETPLACE_TOKEN`: a token that can send `repository_dispatch` events to `port-wind/marketplace`
+
 ## GitHub Pages
 
 The repository now includes a lightweight Astro site for GitHub Pages:
