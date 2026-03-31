@@ -15,8 +15,9 @@ Always use the real `yapi` CLI directly:
 
 1. Check whether `yapi` exists with `command -v yapi`.
 2. If `yapi` is missing and the user wants setup, install `@leeguoo/yapi-mcp` with `npm install -g @leeguoo/yapi-mcp`.
-3. Use direct `yapi ...` commands for query and docs-sync operations.
-4. Only ask the user to run `yapi login` when `whoami` or another command shows a login/config problem.
+3. If the CLI reports `skill update available`, rerun `yapi install-skill --force`.
+4. Use direct `yapi ...` commands for query and docs-sync operations.
+5. Only ask the user to run `yapi login` when `whoami` or another command shows a login/config problem.
 
 ## What the plugin assumes
 
@@ -30,6 +31,7 @@ Always use the real `yapi` CLI directly:
 
 - Verify YApi CLI availability with `command -v yapi`
 - If missing, install with `npm install -g @leeguoo/yapi-mcp`
+- Upgrade with `yapi self-update` when the user explicitly wants the latest CLI
 - Check login state with `yapi whoami`
 - If login is missing, guide the user to run `yapi login`
 - Do not invent a second config format; always reuse `~/.yapi/config.toml`
