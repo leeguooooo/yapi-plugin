@@ -39,11 +39,14 @@ Always use the real `yapi` CLI directly:
 - Search interfaces: `yapi search --q <keyword>`
 - Query by ID: `yapi --path /api/interface/get --query id=<api_id>`
 - List category interfaces: `yapi --path /api/interface/list_cat --query catid=<catid>`
+- Combined query string is supported: `yapi --path /api/interface/list_cat --query "catid=4631&limit=50&page=1"`
 - Inspect login state: `yapi whoami`
 
 ### Docs sync
 
 - Bind docs: `yapi docs-sync bind add --name <binding> --dir <path> --project-id <id> --catid <id>`
+- In global `~/.yapi/docs-sync.json` mode, relative `--dir` values are resolved from the current git project root
+- Preview first: `yapi docs-sync --binding <binding> --dry-run`
 - Run sync: `yapi docs-sync --binding <binding>`
 
 ## URL detection
